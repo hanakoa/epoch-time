@@ -1,4 +1,4 @@
-package epoch_time
+package epoch
 
 import (
 	"encoding/json"
@@ -10,14 +10,14 @@ import (
 
 type Person struct {
 	Name      string    `json:"name"`
-	BirthTime EpochTime `json:"birth_time"`
+	BirthTime Time `json:"birth_time"`
 }
 
-func TestEpochTime(t *testing.T) {
+func TestTime(t *testing.T) {
 	Convey("Given a struct", t, func() {
 		p := Person{
 			Name:      "Kevin Chen",
-			BirthTime: EpochTime(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)),
+			BirthTime: Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)),
 		}
 		b, err := json.Marshal(p)
 		So(err, ShouldBeNil)

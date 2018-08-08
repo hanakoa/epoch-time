@@ -7,8 +7,8 @@ rather than RFC3339.
 // Make a time.Time
 t := time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
 
-// Make an EpochTime
-e := EpochTime(t)
+// Make an Time
+e := Time(t)
 
 b, err := json.Marshal(e)
 
