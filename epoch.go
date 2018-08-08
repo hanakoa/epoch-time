@@ -16,3 +16,7 @@ func (t Time) MarshalJSON() ([]byte, error) {
 	unix := time.Time(t).Unix()
 	return []byte(strconv.FormatInt(unix, 10)), nil
 }
+
+func (t Time) String() string {
+	return time.Time(t).String()
+}
