@@ -8,7 +8,7 @@ package main
 
 import (
 	"time"
-	epoch "github.com/hanakoa/epoch-time"
+	"github.com/hanakoa/epoch-time"
 )
 
 func main() {
