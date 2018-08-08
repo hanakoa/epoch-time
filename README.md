@@ -4,14 +4,23 @@ rather than RFC3339.
 
 ## Usage
 ```golang
-// Make a time.Time
-t := time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
+package main
 
-// Make an Time
-e := Time(t)
+import (
+	"time"
+	epoch "github.com/hanakoa/epoch-time"
+)
 
-b, err := json.Marshal(e)
+func main() {
+	// Make a time.Time
+	t := time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
 
-// prints 735087600
-log.Println(string(b))
+	// Make a Time
+	e := epoch.Time(t)
+
+	b, err := json.Marshal(e)
+
+	// prints 735087600
+	log.Println(string(b))
+}
 ```
