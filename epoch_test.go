@@ -9,8 +9,8 @@ import (
 )
 
 type Person struct {
-	Name      string    `json:"name"`
-	BirthTime Time `json:"birth_time"`
+	Name      string `json:"name"`
+	BirthTime Time   `json:"birth_time"`
 }
 
 func TestTime(t *testing.T) {
