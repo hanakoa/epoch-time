@@ -35,19 +35,22 @@ type Invitation struct {
 }
 
 func main() {
-	e := Event{
+	var b []byte
+	var err error
+
+	i := Invitation{
 		CreatedTime: epoch.Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)),
 		ApprovedTime:   epoch.NullTimeFromPtr(nil),
 	}
 
-	b, err := json.Marshal(e)
+	b, err = json.Marshal(i)
 
 	// prints `{"created_time":735087600,"approved_time":null}`
 	log.Println(string(b))
 
-	e.ApprovedTime = epoch.Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC))
+	i.ApprovedTime = epoch.Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC))
 
-	b, err := json.Marshal(e)
+	b, err = json.Marshal(i)
 
 	// prints `{"created_time":735087600,"approved_time":735087600}`
 	log.Println(string(b))
