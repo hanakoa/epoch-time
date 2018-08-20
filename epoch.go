@@ -30,7 +30,7 @@ func (t *Time) UnmarshalJSON(data []byte) error {
 	if err != nil {
 		return err
 	}
-	tt := time.Unix(int64(i), 0)
+	tt := time.Unix(int64(i), 0).UTC()
 	*t = Time(tt)
 	return nil
 }
