@@ -37,8 +37,6 @@ jobs:
             go test -cover -coverprofile=/tmp/coverage.out -v . | tee ${TEST_RESULTS}/go-test.out
             goveralls -coverprofile=/tmp/coverage.out -service=circle-ci -repotoken=$COVERALLS_TOKEN
 
-      - run: make build
-
       - save_cache:
           key: v1-pkg-cache
           paths:
