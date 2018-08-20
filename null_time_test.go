@@ -24,6 +24,7 @@ func TestNullTimeMarshal(t *testing.T) {
 		s := string(b)
 		log.Println(s)
 		So(s, ShouldEqual, `{"start_time":735087600,"end_time":null}`)
+		So(p.EndTime.Valid, ShouldBeFalse)
 	})
 	Convey("Given an event with an end time", t, func() {
 		at := time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
