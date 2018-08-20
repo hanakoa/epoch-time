@@ -26,16 +26,27 @@ import (
 	"github.com/hanakoa/epoch-time"
 )
 
-func main() {
-	// Make a time.Time
-	t := time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
+type Invitation struct {
+	CreatedTime   epoch.Time     `json:"created_time"`
+	ApprovedTime  epoch.NullTime `json:"approved_time"`
+}
 
-	// Make a Time
-	e := epoch.Time(t)
+func main() {
+	e := Event{
+		CreatedTime: epoch.Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)),
+		ApprovedTime:   epoch.NullTimeFromPtr(nil),
+	}
 
 	b, err := json.Marshal(e)
 
-	// prints 735087600
+	// prints `{"created_time":735087600,"approved_time":null}`
+	log.Println(string(b))
+
+	e.ApprovedTime = epoch.Time(time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC))
+
+	b, err := json.Marshal(e)
+
+	// prints `{"created_time":735087600,"approved_time":735087600}`
 	log.Println(string(b))
 }
 ```

@@ -40,7 +40,6 @@ func TestNullTimeMarshal(t *testing.T) {
 	})
 }
 
-
 func TestNullTimeUnmarshal(t *testing.T) {
 	Convey("Given a JSON string without an end time", t, func() {
 		p := Event{}
