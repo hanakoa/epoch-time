@@ -38,5 +38,6 @@ func TestTimeUnmarshal(t *testing.T) {
 		So(t.Year(), ShouldEqual, 1993)
 		So(t.Month(), ShouldEqual, time.April)
 		So(t.Day(), ShouldEqual, 17)
+		So(t.Hour(), ShouldEqual, 23)
 	})
 }

@@ -24,3 +24,6 @@ func main() {
 	log.Println(string(b))
 }
 ```
+
+## Sources
+This library draws heavily from [guregu/null](https://github.com/guregu/null).
