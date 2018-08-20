@@ -1,10 +1,10 @@
 package epoch
 
 import (
+	"database/sql/driver"
+	"fmt"
 	"strconv"
 	"time"
-	"fmt"
-	"database/sql/driver"
 )
 
 // Time is a wrapper over time.Time that gets serialized

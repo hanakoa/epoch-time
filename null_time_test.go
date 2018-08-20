@@ -1,11 +1,11 @@
 package epoch
 
 import (
+	"encoding/json"
+	. "github.com/smartystreets/goconvey/convey"
+	"log"
 	"testing"
 	"time"
-	"log"
-	. "github.com/smartystreets/goconvey/convey"
-	"encoding/json"
 )
 
 type Event struct {

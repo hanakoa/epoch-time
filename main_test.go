@@ -1,10 +1,10 @@
 package epoch
 
 import (
-	"testing"
-	"os"
-	"time"
 	"log"
+	"os"
+	"testing"
+	"time"
 )
 
 var Birthday = time.Date(1993, 04, 17, 23, 0, 0, 0, time.UTC)
