@@ -87,9 +87,16 @@ func (t *NullTime) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch x := v.(type) {
+	case float64:
+		et := Time(t.Time)
+		err = (&et).UnmarshalJSON(data)
+		t.Time = et
+		t.Valid = true
 	case string:
 		et := Time(t.Time)
 		err = (&et).UnmarshalJSON(data)
+		t.Time = et
+		t.Valid = true
 	case map[string]interface{}:
 		ti, tiOK := x["Time"].(string)
 		valid, validOK := x["Valid"].(bool)
