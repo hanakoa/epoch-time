@@ -2,8 +2,20 @@
 [![GoDoc](https://godoc.org/github.com/hanakoa/epoch-time?status.svg)](https://godoc.org/github.com/hanakoa/epoch-time)
 [![Go report](http://goreportcard.com/badge/hanakoa/epoch-time)](http://goreportcard.com/report/hanakoa/epoch-time)
 
-This library offers a wrapper over `time.Time` that gets serialized as epoch seconds
-rather than RFC3339.
+This library offers a timestamp struct that is SQL-compatible and marshals/unmarshals as epoch seconds.
+It also offers a nullable version.
+
+## Why?
+Traditionally, `time.Time` gets serialized and deserialized using RFC3339 rather than epoch seconds.
+There is a [workaround](https://stackoverflow.com/questions/23695479/format-timestamp-in-outgoing-json-in-golang)
+you can use to create your own wrapper over `time.Time`.
+
+However, there are two additional requirements many apps need:
+- timestamps need SQL support
+- timestamps need to be nullable sometimes
+
+For SQL support, we implement the [Value](https://golang.org/pkg/database/sql/driver/#Value) interface.
+For nullability, we borrow heavily from [guregu/null](https://github.com/guregu/null).
 
 ## Usage
 ```golang
@@ -27,6 +39,3 @@ func main() {
 	log.Println(string(b))
 }
 ```
-
-## Sources
-This library draws heavily from [guregu/null](https://github.com/guregu/null).
