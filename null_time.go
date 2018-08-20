@@ -36,7 +36,7 @@ func (t NullTime) Value() (driver.Value, error) {
 	if !t.Valid {
 		return nil, nil
 	}
-	return t.Time, nil
+	return time.Time(t.Time), nil
 }
 
 // NewTime creates a new NullTime.
