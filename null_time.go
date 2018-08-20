@@ -48,7 +48,7 @@ func NewNullTime(t time.Time, valid bool) NullTime {
 }
 
 // NullTimeFrom creates a new NullTime that will always be valid.
-func TimeFrom(t time.Time) NullTime {
+func NullTimeFrom(t time.Time) NullTime {
 	return NewNullTime(t, true)
 }
 
