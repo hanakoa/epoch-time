@@ -1,4 +1,7 @@
 # epoch-time
+[![GoDoc](https://godoc.org/github.com/hanakoa/epoch-time?status.svg)](https://godoc.org/github.com/hanakoa/epoch-time)
+[![Go report](http://goreportcard.com/badge/hanakoa/epoch-time)](http://goreportcard.com/report/hanakoa/epoch-time)
+
 This library offers a wrapper over `time.Time` that gets serialized as epoch seconds
 rather than RFC3339.
 
