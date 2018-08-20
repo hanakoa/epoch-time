@@ -1,6 +1,9 @@
 # epoch-time
 [![GoDoc](https://godoc.org/github.com/hanakoa/epoch-time?status.svg)](https://godoc.org/github.com/hanakoa/epoch-time)
 [![Go report](http://goreportcard.com/badge/hanakoa/epoch-time)](http://goreportcard.com/report/hanakoa/epoch-time)
+[![CircleCI](https://circleci.com/gh/hanakoa/epoch-time.svg?style=shield)](https://circleci.com/gh/hanakoa/epoch-time)
+[![Coverage Status](https://coveralls.io/repos/github/hanakoa/epoch-time/badge.svg?branch=master)](https://coveralls.io/github/hanakoa/epoch-time?branch=master)
+[![GitHub Release](https://img.shields.io/github/release/hanakoa/epoch-time.svg)](https://github.com/hanakoa/epoch-time/releases)
 
 This library offers a timestamp struct that is SQL-compatible and marshals/unmarshals as epoch seconds.
 It also offers a nullable version.
