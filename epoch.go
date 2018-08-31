@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strconv"
 	"time"
+	"math"
 )
 
 // Time is a wrapper over time.Time that gets serialized
@@ -26,11 +27,13 @@ func (t *Time) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 	var err error
-	i, err := strconv.Atoi(string(data))
+	f, err := strconv.ParseFloat(string(data), 64)
+	epochSeconds, _ := math.Modf(f);
+
 	if err != nil {
 		return err
 	}
-	tt := time.Unix(int64(i), 0).UTC()
+	tt := time.Unix(int64(epochSeconds), 0).UTC()
 	*t = Time(tt)
 	return nil
 }
